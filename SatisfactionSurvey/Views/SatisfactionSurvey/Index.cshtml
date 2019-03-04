@@ -1,0 +1,179 @@
+﻿@{
+	ViewData["Title"] = "满意度调查管理";
+}
+@{
+    var pmsnList = SessionUtil.GetUserPermission("101013");
+}
+
+<div class="wrapper wrapper-content">
+	<div class="ibox float-e-margins">
+		<div class="ibox-title">
+			<h5>满意度调查管理</h5>
+			<div class="ibox-tools">
+				<a class="collapse-link">
+					<i class="fa fa-chevron-up"></i>
+				</a>
+			</div>
+		</div>
+		<div class="ibox-content">
+			<div class="form-group">
+				@*@foreach (var item in from item in pmsnList where item.type == 3 orderby item.sort ascending select item)
+				{
+				<button id="@item.pmsnid" type="button" class="btn @item.style" onclick="@item.script"><i class="@item.icon"></i>&nbsp;@item.name</button>
+				}*@
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<input id="txtSearchKey" type="text" class="input form-control" placeholder="搜索关键字" />
+					<span class="input-group-btn">
+						<button id="btnSearch" class="btn btn btn-primary" onclick="searchData()" type="button"> <i class="fa fa-search"></i> 搜索</button>
+					</span>
+				</div>
+			</div>
+			<div class="jqGrid_wrapper">
+				<table id="table_list" style="overflow-x:hidden"></table>
+				<div id="pager_list"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts{
+<script type="text/javascript">
+    var links=@Html.Raw(JsonConvert.SerializeObject(from item in pmsnList where item.type == 4 orderby item.sort ascending select item));
+
+	function addModel() {
+		Smart.dialog.open("新增", "/SatisfactionSurvey/SatisfactionSurvey/Create", "800px", "600px", function () {
+			$("#table_list").trigger("reloadGrid");
+		});
+	}
+
+	function editModel(obj) {
+		Smart.dialog.open("修改", "/SatisfactionSurvey/SatisfactionSurvey/Edit/" + obj, "800px", "500px", function () {
+			$("#table_list").trigger("reloadGrid");
+		});
+	}
+
+	function delModel(obj) {
+		Smart.dialog.confirm("您是否确认删除?删除后数据将无法恢复!!!",
+			{ icon: 3, title: '提示' },
+			function () {
+				Smart.AjaxPost("/SatisfactionSurvey/SatisfactionSurvey/Delete", { id: obj.toString() }, function (data) {
+					if (data.code == 0) {
+						Smart.dialog.msg(data.msg);
+						$("#table_list").trigger("reloadGrid");
+					}
+					else {
+						Smart.dialog.msg(data.msg);
+					}
+				});
+			},
+			function () {
+
+			});
+	}
+
+	//搜索
+	function searchData() {
+
+		var filters = { groupOp: "ADN", rules: [] };
+		filters.rules.push({ field: "name", op: "cn", data: $("#txtSearchKey").val() });
+
+		var postData = $("#table_list").jqGrid("getGridParam", "postData");
+
+		$.extend(postData, { filters: filters, page: 1, nd: new Date().getTime(), search: true, });
+
+
+		$("#table_list").jqGrid("setGridParam", {
+			postData: postData,
+			page: 1
+		}).trigger("reloadGrid");
+
+	}
+
+	//加载
+	function loadData()
+	{
+		$("#table_list").jqGrid("setGridParam", { datatype: "json" }).trigger("reloadGrid");
+	}
+
+	$(document).ready(function () {
+		var config = {
+			id: "table_list",
+			pagerId: "pager_list",
+			title: "终端列表",
+			url: "/SatisfactionSurvey/SatisfactionSurvey/GetByPageList",
+			colNames: [
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_ID"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_ProjectName"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_ContractNum"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_BuildUnit"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Name"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Department"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Position"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Telephone"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Shigong"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Service"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Technology"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Orderliness"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Communicate"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Approach"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Completed"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Opinion"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Problem"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Customer"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_CheckObject"]",
+			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_CheckDate"]",
+			"操作"
+			],
+			colModel: [
+				{ name: "ID", index: "id", width: 60, key: true, hidden: true },
+				{ name: "ProjectName", index: "project_name", width: 120 ,sortable: true},
+				{ name: "ContractNum", index: "contract_num", width: 120 ,sortable: true},
+				{ name: "BuildUnit", index: "build_unit", width: 120 ,sortable: true},
+				{ name: "Name", index: "name", width: 120 ,sortable: true},
+				{ name: "Department", index: "department", width: 120 ,sortable: true},
+				{ name: "Position", index: "position", width: 120 ,sortable: true},
+				{ name: "Telephone", index: "telephone", width: 120 ,sortable: true},
+				{ name: "Shigong", index: "shigong", width: 120 ,sortable: true},
+				{ name: "Service", index: "service", width: 120 ,sortable: true},
+				{ name: "Technology", index: "technology", width: 120 ,sortable: true},
+				{ name: "Orderliness", index: "orderliness", width: 120 ,sortable: true},
+				{ name: "Communicate", index: "communicate", width: 120 ,sortable: true},
+				{ name: "Approach", index: "approach", width: 120 ,sortable: true},
+				{ name: "Completed", index: "completed", width: 120 ,sortable: true},
+				{ name: "Opinion", index: "opinion", width: 120 ,sortable: true},
+				{ name: "Problem", index: "problem", width: 120 ,sortable: true},
+				{ name: "Customer", index: "customer", width: 120 ,sortable: true},
+				{ name: "CheckObject", index: "check_object", width: 120 ,sortable: true},
+				{ name: "CheckDate", index: "check_date", width: 120 ,sortable: true},
+				{
+					name: "op", index: 'op', width: 180, sortable: false, formatter: function (cellvalue, options, rowdata) {
+						var temp = "";
+						cellvalue = rowdata.ID;
+						for (var i in links) {
+							var s = eval(links[i].script);
+							temp += "<a href=\"#\" onclick=\"" + s + "\">" + links[i].name + "</a> ";
+						}
+						return temp;
+					},
+				}
+
+			],
+			multiselect: false,
+			sortname: "id",
+			sortorder: "desc",
+		};
+
+		Smart.jqGrid.load(config);
+
+		$("#btnSearch").click(function () {
+			searchData();
+		})
+
+		loadData();
+	});
+
+
+</script>
+}

@@ -1,0 +1,194 @@
+﻿@{
+    ViewData["Title"] = "满意度调查详情";
+}
+@using SmartFramwork.Domain.SatisfactionSurvey.Models;
+@model SatisfactionSurveyModel
+
+<div class="wrapper wrapper-content">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>满意度调查详情</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <form class="form-horizontal">
+                <input type="hidden" asp-for="ID" />
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="ProjectName"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.ProjectName, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="ContractNum"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.ContractNum, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="BuildUnit"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.BuildUnit, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Name"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Name, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Department"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Department, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Position"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Position, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Telephone"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Telephone, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Shigong"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Shigong, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Service"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Service, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Technology"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Technology, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Orderliness"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Orderliness, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Communicate"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Communicate, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Approach"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Approach, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Completed"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Completed, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Opinion"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Opinion, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Problem"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Problem, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="Customer"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.Customer, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="CheckObject"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.CheckObject, new { @class = "control-label" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <label asp-for="CheckDate"></label>：
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.DisplayFor(n => n.CheckDate, new { @class = "control-label" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-8">
+                        <button class="btn btn-white" style="margin-left:120px" type="button" id="btnBack">返回</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#btnBack").on("click", function () {
+                var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                parent.layer.close(index);
+            });
+    </script>
+}
