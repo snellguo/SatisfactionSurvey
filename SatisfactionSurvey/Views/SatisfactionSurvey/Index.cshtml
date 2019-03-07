@@ -1,55 +1,78 @@
 ﻿@{
-	ViewData["Title"] = "满意度调查管理";
+    ViewData["Title"] = "满意度调查管理";
 }
 @{
     var pmsnList = SessionUtil.GetUserPermission("101013");
 }
 
 <div class="wrapper wrapper-content">
-	<div class="ibox float-e-margins">
-		<div class="ibox-title">
-			<h5>满意度调查管理</h5>
-			<div class="ibox-tools">
-				<a class="collapse-link">
-					<i class="fa fa-chevron-up"></i>
-				</a>
-			</div>
-		</div>
-		<div class="ibox-content">
-			<div class="form-group">
-				@*@foreach (var item in from item in pmsnList where item.type == 3 orderby item.sort ascending select item)
-				{
-				<button id="@item.pmsnid" type="button" class="btn @item.style" onclick="@item.script"><i class="@item.icon"></i>&nbsp;@item.name</button>
-				}*@
-			</div>
-			<div class="form-group">
-				<div class="input-group">
-					<input id="txtSearchKey" type="text" class="input form-control" placeholder="搜索关键字" />
-					<span class="input-group-btn">
-						<button id="btnSearch" class="btn btn btn-primary" onclick="searchData()" type="button"> <i class="fa fa-search"></i> 搜索</button>
-					</span>
-				</div>
-			</div>
-			<div class="jqGrid_wrapper">
-				<table id="table_list" style="overflow-x:hidden"></table>
-				<div id="pager_list"></div>
-			</div>
-		</div>
-	</div>
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>满意度调查管理</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="form-group">
+                @*@foreach (var item in from item in pmsnList where item.type == 3 orderby item.sort ascending select item)
+                    {
+                    <button id="@item.pmsnid" type="button" class="btn @item.style" onclick="@item.script"><i class="@item.icon"></i>&nbsp;@item.name</button>
+                    }*@
+                <button id="19" type="button" class="btn btn-warning" onclick="addModel();"><i></i>&nbsp;新建</button>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input id="txtSearchKey" type="text" class="input form-control" placeholder="项目名称/合同号" />
+                    <span class="input-group-btn">
+                        <button id="btnSearch" class="btn btn btn-primary" onclick="searchData()" type="button"> <i class="fa fa-search"></i> 搜索</button>
+                    </span>
+                </div>
+            </div>
+            <div class="jqGrid_wrapper">
+                <table id="table_list" style="overflow-x:hidden"></table>
+                <div id="pager_list"></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts{
-<script type="text/javascript">
+    <script src="~/lib/clipboard.min.js"></script>
+    <script type="text/javascript">
     var links=@Html.Raw(JsonConvert.SerializeObject(from item in pmsnList where item.type == 4 orderby item.sort ascending select item));
 
+    //function copyUrl(obj) {
+    //    var url = document.URL + "/SatisfactionSurvey/Edit/" + obj;
+    //    url = url.replace("/#", "");
+    //    alert(url);
+    //    //window.clipboardData.setData("Text", url);
+
+    //    }
+        //var clipboard = new clipboard('.btn', {
+        //    text: function () {
+        //        return "test";
+        //    }
+        //});
+        //clipboard.on('success', function (e) {
+        //    alert("复制成功");
+        //});
+
+        //clipboard.on('error', function (e) {
+        //    console.log(e);
+        //});
+
+
 	function addModel() {
-		Smart.dialog.open("新增", "/SatisfactionSurvey/SatisfactionSurvey/Create", "800px", "600px", function () {
+		Smart.dialog.open("新增", "/SatisfactionSurvey/Create", "800px", "600px", function () {
 			$("#table_list").trigger("reloadGrid");
 		});
 	}
 
 	function editModel(obj) {
-		Smart.dialog.open("修改", "/SatisfactionSurvey/SatisfactionSurvey/Edit/" + obj, "800px", "500px", function () {
+		Smart.dialog.open("修改", "/SatisfactionSurvey/Edit/" + obj, "800px", "500px", function () {
 			$("#table_list").trigger("reloadGrid");
 		});
 	}
@@ -58,7 +81,7 @@
 		Smart.dialog.confirm("您是否确认删除?删除后数据将无法恢复!!!",
 			{ icon: 3, title: '提示' },
 			function () {
-				Smart.AjaxPost("/SatisfactionSurvey/SatisfactionSurvey/Delete", { id: obj.toString() }, function (data) {
+				Smart.AjaxPost("/SatisfactionSurvey/Delete", { id: obj.toString() }, function (data) {
 					if (data.code == 0) {
 						Smart.dialog.msg(data.msg);
 						$("#table_list").trigger("reloadGrid");
@@ -77,7 +100,7 @@
 	function searchData() {
 
 		var filters = { groupOp: "ADN", rules: [] };
-		filters.rules.push({ field: "name", op: "cn", data: $("#txtSearchKey").val() });
+        filters.rules.push({ field: "keyValue", op: "cn", data: $("#txtSearchKey").val() });
 
 		var postData = $("#table_list").jqGrid("getGridParam", "postData");
 
@@ -101,8 +124,8 @@
 		var config = {
 			id: "table_list",
 			pagerId: "pager_list",
-			title: "终端列表",
-			url: "/SatisfactionSurvey/SatisfactionSurvey/GetByPageList",
+			title: "列表",
+			url: "/SatisfactionSurvey/GetByPageList",
 			colNames: [
 			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_ID"]",
 			"@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_ProjectName"]",
@@ -150,10 +173,16 @@
 				{
 					name: "op", index: 'op', width: 180, sortable: false, formatter: function (cellvalue, options, rowdata) {
 						var temp = "";
-						cellvalue = rowdata.ID;
+                        cellvalue = rowdata.ID; 
+                        temp += "<a class='btnCopy' href=\"#\" data-clipboard-text=\"" + cellvalue + "\">复制</a> ";
+                        temp += "<a href=\"#\" onclick=\"editModel(" + cellvalue + ")\">修改</a> ";
+                        temp += "<a href=\"#\" onclick=\"delModel(" + cellvalue + ")\">删除</a> ";
+                        //temp += "<button class=\"btn\" data-clipboard-text=\"http://www.jq22.com/\">点击复制</button>"
+
 						for (var i in links) {
-							var s = eval(links[i].script);
-							temp += "<a href=\"#\" onclick=\"" + s + "\">" + links[i].name + "</a> ";
+							//var s = eval(links[i].script);
+       //                     temp += "<a href=\"#\" onclick=\"" + s + "\">" + links[i].name + "</a> ";
+
 						}
 						return temp;
 					},
@@ -171,9 +200,30 @@
 			searchData();
 		})
 
-		loadData();
+        loadData();
+
+        //初始化复制按钮
+        var clipboard = new ClipboardJS('.btnCopy', {
+            text: function (obj) {
+                var url = "";
+                //有端口号
+                if (document.URL.lastIndexOf(":") > 5) {
+                    var url = window.location.href.replace("/#", "")
+                        + "/SatisfactionSurvey/Edit/" + $(obj).attr("data-clipboard-text");
+                }//无端口号
+                else {
+                    url = document.domain
+                        + "/SatisfactionSurvey/Edit/" + $(obj).attr("data-clipboard-text");
+                }
+               
+                return url;
+            }
+        });
+        clipboard.on('success', function (e) {
+            alert("复制成功");
+        });
 	});
+        
 
-
-</script>
+    </script>
 }

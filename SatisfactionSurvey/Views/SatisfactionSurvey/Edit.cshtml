@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "修改满意度调查";
+    ViewData["Title"] = "满意度调查";
 }
 @using SmartFramwork.Domain.SatisfactionSurvey.Models;
 @model SatisfactionSurveyModel
@@ -7,7 +7,7 @@
 <div class="wrapper wrapper-content">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>修改满意度调查</h5>
+            <h5>满意度调查</h5>
             <div class="ibox-tools">
                 <a class="collapse-link">
                     <i class="fa fa-chevron-up"></i>
@@ -87,7 +87,21 @@
                         <label asp-for="Shigong"></label>：
                     </label>
                     <div class="col-sm-8">
-                        <input asp-for="Shigong" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Shigong"]" />
+                        <input type="radio" asp-for="Shigong" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Shigong"]"
+                               value="5" /> 5分（非常满意）
+                        <input type="radio" asp-for="Shigong" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Shigong"]"
+                               value="4" /> 4分（满意）
+                        <input type="radio" asp-for="Shigong" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Shigong"]"
+                               value="3" /> 3分（一般）
+                        <input type="radio" asp-for="Shigong" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Shigong"]"
+                               value="2" /> 2分（不满意）
+                        <input type="radio" asp-for="Shigong" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Shigong"]"
+                               value="1" /> 1分（差）
                         <span asp-validation-for="Shigong"></span>
                     </div>
                 </div>
@@ -96,7 +110,21 @@
                         <label asp-for="Service"></label>：
                     </label>
                     <div class="col-sm-8">
-                        <input asp-for="Service" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Service"]" />
+                        <input type="radio" asp-for="Service" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Service"]"
+                               value="5" /> 5分（非常满意）
+                        <input type="radio" asp-for="Service" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Service"]"
+                               value="4" /> 4分（满意）
+                        <input type="radio" asp-for="Service" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Service"]"
+                               value="3" /> 3分（一般）
+                        <input type="radio" asp-for="Service" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Service"]"
+                               value="2" /> 2分（不满意）
+                        <input type="radio" asp-for="Service" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Service"]"
+                               value="1" /> 1分（差）
                         <span asp-validation-for="Service"></span>
                     </div>
                 </div>
@@ -105,7 +133,21 @@
                         <label asp-for="Technology"></label>：
                     </label>
                     <div class="col-sm-8">
-                        <input asp-for="Technology" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Technology"]" />
+                        <input type="radio" asp-for="Technology" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Technology"]"
+                               value="5" /> 5分（非常满意）
+                        <input type="radio" asp-for="Technology" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Technology"]"
+                               value="4" /> 4分（满意）
+                        <input type="radio" asp-for="Technology" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Technology"]"
+                               value="3" /> 3分（一般）
+                        <input type="radio" asp-for="Technology" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Technology"]"
+                               value="2" /> 2分（不满意）
+                        <input type="radio" asp-for="Technology" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Technology"]"
+                               value="1" /> 1分（差）
                         <span asp-validation-for="Technology"></span>
                     </div>
                 </div>
@@ -114,7 +156,21 @@
                         <label asp-for="Orderliness"></label>：
                     </label>
                     <div class="col-sm-8">
-                        <input asp-for="Orderliness" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Orderliness"]" />
+                        <input type="radio" asp-for="Orderliness" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Orderliness"]"
+                               value="5" /> 5分（非常满意）
+                        <input type="radio" asp-for="Orderliness" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Orderliness"]"
+                               value="4" /> 4分（满意）
+                        <input type="radio" asp-for="Orderliness" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Orderliness"]"
+                               value="3" /> 3分（一般）
+                        <input type="radio" asp-for="Orderliness" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Orderliness"]"
+                               value="2" /> 2分（不满意）
+                        <input type="radio" asp-for="Orderliness" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Orderliness"]"
+                               value="1" /> 1分（差）
                         <span asp-validation-for="Orderliness"></span>
                     </div>
                 </div>
@@ -123,7 +179,21 @@
                         <label asp-for="Communicate"></label>：
                     </label>
                     <div class="col-sm-8">
-                        <input asp-for="Communicate" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Communicate"]" />
+                        <input type="radio" asp-for="Communicate" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Communicate"]"
+                               value="5" /> 5分（非常满意） 
+                        <input type="radio" asp-for="Communicate" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Communicate"]"
+                               value="4" /> 4分（满意）
+                        <input type="radio" asp-for="Communicate" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Communicate"]"
+                               value="3" /> 3分（一般）
+                        <input type="radio" asp-for="Communicate" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Communicate"]"
+                               value="2" /> 2分（不满意）
+                        <input type="radio" asp-for="Communicate" autocomplete="off"
+                               placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Communicate"]"
+                               value="1" /> 1分（差）
                         <span asp-validation-for="Communicate"></span>
                     </div>
                 </div>
@@ -150,7 +220,7 @@
                         <label asp-for="Opinion"></label>：
                     </label>
                     <div class="col-sm-8">
-                        <input asp-for="Opinion" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Opinion"]" />
+                        <textarea asp-for="Opinion" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Opinion"]"></textarea>
                         <span asp-validation-for="Opinion"></span>
                     </div>
                 </div>
@@ -159,7 +229,7 @@
                         <label asp-for="Problem"></label>：
                     </label>
                     <div class="col-sm-8">
-                        <input asp-for="Problem" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Problem"]" />
+                        <textarea asp-for="Problem" class="form-control" autocomplete="off" placeholder="@Localizer["SatisfactionSurvey_SatisfactionSurveyModel_Problem"]"></textarea>
                         <span asp-validation-for="Problem"></span>
                     </div>
                 </div>
@@ -194,7 +264,7 @@
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-8">
                         <button class="btn btn-info" disabled type="submit" id="btnSubmit">保存</button>
-                        <button class="btn btn-white" style="margin-left:120px" type="button" id="btnBack">返回</button>
+                        @*<button class="btn btn-white" style="margin-left:120px" type="button" id="btnBack">返回</button>*@
                     </div>
                 </div>
 

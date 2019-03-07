@@ -11,7 +11,8 @@ using Microsoft.Extensions.Localization;
 using SmartFramwork.Domain.SatisfactionSurvey.Models;
 using SmartFramwork.Domain.SatisfactionSurvey.Resources;
 
-namespace SatisfactionSurvey.UI.SatisfactionSurvey.Areas.SatisfactionSurvey.Controllers
+//namespace SatisfactionSurvey.UI.SatisfactionSurvey.Areas.SatisfactionSurvey.Controllers
+namespace SatisfactionSurvey.Controllers
 {
 	//[Area("SatisfactionSurvey")]
 	public class SatisfactionSurveyController : Controller

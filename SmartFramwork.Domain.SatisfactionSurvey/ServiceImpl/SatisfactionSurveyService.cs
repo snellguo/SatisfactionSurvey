@@ -40,7 +40,8 @@ namespace SmartFramwork.Domain.SatisfactionSurvey.ServiceImpl
 					{
 						if (r.field == "keyValue" && !string.IsNullOrWhiteSpace(r.data))
 						{
-							//pageExp.Where = pageExp.Where.And(n => n.name.Contains(r.data));
+							pageExp.Where = pageExp.Where.And(n => n.project_name.Contains(r.data));
+                            pageExp.Where = pageExp.Where.Or(n => n.build_unit.Contains(r.data));
 						}
 
 					}

@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Required_ErrorMessage" xml:space="preserve">
+    <value>{0}为必填项!</value>
+  </data>
+  <data name="StringLength_ErrorMessage" xml:space="preserve">
+    <value>{0}长度必须在{2}-{1}之间!</value>
+  </data>
+  <data name="Manage_ErrorMessage_Required" xml:space="preserve">
+    <value>字段不可为空。</value>
+  </data>
+  <data name="Manage_ErrorMessage_StringLength" xml:space="preserve">
+    <value>长度必须在{0}-{1}之间。</value>
+  </data>
+  <data name="Manage_Required_ErrorMessage" xml:space="preserve">
+    <value>不可为空</value>
+  </data>
+  <data name="Manage_UserLoginModel_Name" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Manage_UserLoginModel_Name_Required_ErrorMessage" xml:space="preserve">
+    <value>用户名不可为空</value>
+  </data>
+  <data name="Manage_UserLoginModel_Name_StringLength_ErrorMessage" xml:space="preserve">
+    <value>字符串长度必须在{0}-{1}之间</value>
+  </data>
+  <data name="Manage_UserLoginModel_Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Manage_UserLoginModel_Password_Required_ErrorMessage" xml:space="preserve">
+    <value>密码不可为空ll</value>
+  </data>
+  <data name="Manage_UserLoginModel_RememberMe" xml:space="preserve">
+    <value>是否自动登录</value>
+  </data>
+  <data name="Manage_RoleModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_RoleModel_AppID" xml:space="preserve">
+    <value>系统ID</value>
+  </data>
+  <data name="Manage_RoleModel_OrganizationID" xml:space="preserve">
+    <value>机构ID</value>
+  </data>
+  <data name="Manage_RoleModel_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Manage_RoleModel_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Manage_RoleModel_SystemFlag" xml:space="preserve">
+    <value>系统标识</value>
+  </data>
+  <data name="Manage_RoleModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_RoleModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_RoleModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_RoleModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_RoleModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_RoleModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_UserModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_UserModel_OrganizationID" xml:space="preserve">
+    <value>组织机构</value>
+  </data>
+  <data name="Manage_UserModel_DrpartmentID" xml:space="preserve">
+    <value>部门主键</value>
+  </data>
+  <data name="Manage_UserModel_Username" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="Manage_UserModel_GUID" xml:space="preserve">
+    <value>GUID</value>
+  </data>
+  <data name="Manage_UserModel_Alias" xml:space="preserve">
+    <value>别名</value>
+  </data>
+  <data name="Manage_UserModel_EnglishName" xml:space="preserve">
+    <value>英文名称</value>
+  </data>
+  <data name="Manage_UserModel_Landline" xml:space="preserve">
+    <value>座机</value>
+  </data>
+  <data name="Manage_UserModel_Password" xml:space="preserve">
+    <value>用户密码</value>
+  </data>
+  <data name="Manage_UserModel_Name" xml:space="preserve">
+    <value>姓名</value>
+  </data>
+  <data name="Manage_UserModel_Gender" xml:space="preserve">
+    <value>性别</value>
+  </data>
+  <data name="Manage_UserModel_Birthday" xml:space="preserve">
+    <value>生日</value>
+  </data>
+  <data name="Manage_UserModel_QQ" xml:space="preserve">
+    <value>QQ</value>
+  </data>
+  <data name="Manage_UserModel_RegisterDate" xml:space="preserve">
+    <value>注册时间</value>
+  </data>
+  <data name="Manage_UserModel_Photo" xml:space="preserve">
+    <value>用户头像</value>
+  </data>
+  <data name="Manage_UserModel_Post" xml:space="preserve">
+    <value>岗位</value>
+  </data>
+  <data name="Manage_UserModel_Phone" xml:space="preserve">
+    <value>手机号码</value>
+  </data>
+  <data name="Manage_UserModel_Email" xml:space="preserve">
+    <value>邮箱</value>
+  </data>
+  <data name="Manage_UserModel_OfficePhone" xml:space="preserve">
+    <value>办公电话</value>
+  </data>
+  <data name="Manage_UserModel_HomePhone" xml:space="preserve">
+    <value>家庭电话</value>
+  </data>
+  <data name="Manage_UserModel_Ext" xml:space="preserve">
+    <value>分机号</value>
+  </data>
+  <data name="Manage_UserModel_LastTime" xml:space="preserve">
+    <value>上次登录时间</value>
+  </data>
+  <data name="Manage_UserModel_LastIp" xml:space="preserve">
+    <value>上次登录IP</value>
+  </data>
+  <data name="Manage_UserModel_SystemFlag" xml:space="preserve">
+    <value>系统标识</value>
+  </data>
+  <data name="Manage_UserModel_Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="Manage_UserModel_IsOnline" xml:space="preserve">
+    <value>是否在线</value>
+  </data>
+  <data name="Manage_UserModel_IsDelete" xml:space="preserve">
+    <value>是否删除</value>
+  </data>
+  <data name="Manage_UserModel_Activate" xml:space="preserve">
+    <value>是否启用</value>
+  </data>
+  <data name="Manage_UserModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_UserModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_UserModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_UserModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_UserModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_UserModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_DictionaryModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_DictionaryModel_Code" xml:space="preserve">
+    <value>字典代码</value>
+  </data>
+  <data name="Manage_DictionaryModel_ShortName" xml:space="preserve">
+    <value>短名称</value>
+  </data>
+  <data name="Manage_DictionaryModel_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Manage_DictionaryModel_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Manage_DictionaryModel_ParentID" xml:space="preserve">
+    <value>父级编号</value>
+  </data>
+  <data name="Manage_DictionaryModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_DictionaryModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_DictionaryModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_DictionaryModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_DictionaryModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_DictionaryModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_MenuModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_MenuModel_AppID" xml:space="preserve">
+    <value>应用ID</value>
+  </data>
+  <data name="Manage_MenuModel_Name" xml:space="preserve">
+    <value>菜单名称</value>
+  </data>
+  <data name="Manage_MenuModel_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Manage_MenuModel_ParentID" xml:space="preserve">
+    <value>父id</value>
+  </data>
+  <data name="Manage_MenuModel_Level" xml:space="preserve">
+    <value>级别</value>
+  </data>
+  <data name="Manage_MenuModel_Node" xml:space="preserve">
+    <value>菜单节点</value>
+  </data>
+  <data name="Manage_MenuModel_Url" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Manage_MenuModel_Type" xml:space="preserve">
+    <value>菜单类型</value>
+  </data>
+  <data name="Manage_MenuModel_Icon" xml:space="preserve">
+    <value>icon</value>
+  </data>
+  <data name="Manage_MenuModel_Activate" xml:space="preserve">
+    <value>是否启用</value>
+  </data>
+  <data name="Manage_MenuModel_Sort" xml:space="preserve">
+    <value>排序</value>
+  </data>
+  <data name="Manage_MenuModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_MenuModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_MenuModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_MenuModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_MenuModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_MenuModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_PermissionModel_ID" xml:space="preserve">
+    <value>编号ID</value>
+  </data>
+  <data name="Manage_PermissionModel_AppID" xml:space="preserve">
+    <value>appid</value>
+  </data>
+  <data name="Manage_PermissionModel_MenuID" xml:space="preserve">
+    <value>菜单id</value>
+  </data>
+  <data name="Manage_PermissionModel_Code" xml:space="preserve">
+    <value>权限码</value>
+  </data>
+  <data name="Manage_PermissionModel_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Manage_PermissionModel_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Manage_PermissionModel_ParentID" xml:space="preserve">
+    <value>父节点</value>
+  </data>
+  <data name="Manage_PermissionModel_Icon" xml:space="preserve">
+    <value>Icon</value>
+  </data>
+  <data name="Manage_PermissionModel_Type" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="Manage_PermissionModel_Script" xml:space="preserve">
+    <value>脚本</value>
+  </data>
+  <data name="Manage_PermissionModel_Style" xml:space="preserve">
+    <value>样式</value>
+  </data>
+  <data name="Manage_PermissionModel_Activate" xml:space="preserve">
+    <value>是否启用</value>
+  </data>
+  <data name="Manage_PermissionModel_Sort" xml:space="preserve">
+    <value>排序</value>
+  </data>
+  <data name="Manage_PermissionModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_PermissionModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_PermissionModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_PermissionModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_PermissionModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_PermissionModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_RolePermissionModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_RolePermissionModel_RoleID" xml:space="preserve">
+    <value>角色主键</value>
+  </data>
+  <data name="Manage_RolePermissionModel_PermissionID" xml:space="preserve">
+    <value>权限主键</value>
+  </data>
+  <data name="Manage_RolePermissionModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_RolePermissionModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_RolePermissionModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_RolePermissionModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_RolePermissionModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_RolePermissionModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_UserRoleModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_UserRoleModel_AppID" xml:space="preserve">
+    <value>系统ID</value>
+  </data>
+  <data name="Manage_UserRoleModel_OrganizationID" xml:space="preserve">
+    <value>机构ID</value>
+  </data>
+  <data name="Manage_UserRoleModel_UserID" xml:space="preserve">
+    <value>用户ID</value>
+  </data>
+  <data name="Manage_UserRoleModel_RoleID" xml:space="preserve">
+    <value>角色ID</value>
+  </data>
+  <data name="Manage_UserRoleModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_UserRoleModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_UserRoleModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_UserRoleModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_UserRoleModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_UserRoleModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_OrganizationModel_ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Manage_OrganizationModel_AppID" xml:space="preserve">
+    <value>应用ID</value>
+  </data>
+  <data name="Manage_OrganizationModel_Name" xml:space="preserve">
+    <value>机构名称</value>
+  </data>
+  <data name="Manage_OrganizationModel_Code" xml:space="preserve">
+    <value>机构代码</value>
+  </data>
+  <data name="Manage_OrganizationModel_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Manage_OrganizationModel_ParentID" xml:space="preserve">
+    <value>上级机构</value>
+  </data>
+  <data name="Manage_OrganizationModel_Level" xml:space="preserve">
+    <value>级别</value>
+  </data>
+  <data name="Manage_OrganizationModel_Type" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="Manage_OrganizationModel_Remarks" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="Manage_OrganizationModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_OrganizationModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_OrganizationModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_OrganizationModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_OrganizationModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_OrganizationModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_DeviceModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_DeviceModel_Name" xml:space="preserve">
+    <value>分机号</value>
+  </data>
+  <data name="Manage_DeviceModel_Account" xml:space="preserve">
+    <value>账户</value>
+  </data>
+  <data name="Manage_DeviceModel_Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="Manage_DeviceModel_Ip" xml:space="preserve">
+    <value>IP地址</value>
+  </data>
+  <data name="Manage_DeviceModel_Port" xml:space="preserve">
+    <value>端口</value>
+  </data>
+  <data name="Manage_DeviceModel_Model" xml:space="preserve">
+    <value>型号</value>
+  </data>
+  <data name="Manage_DeviceModel_Brand" xml:space="preserve">
+    <value>品牌</value>
+  </data>
+  <data name="Manage_DeviceModel_Type" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="Manage_DepartmentModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_DepartmentModel_OrganizationID" xml:space="preserve">
+    <value>机构ID</value>
+  </data>
+  <data name="Manage_DepartmentModel_Name" xml:space="preserve">
+    <value>部门名称</value>
+  </data>
+  <data name="Manage_DepartmentModel_Code" xml:space="preserve">
+    <value>部门代码</value>
+  </data>
+  <data name="Manage_DepartmentModel_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Manage_DepartmentModel_ParentID" xml:space="preserve">
+    <value>上级部门</value>
+  </data>
+  <data name="Manage_DepartmentModel_Type" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="Manage_DepartmentModel_Manager" xml:space="preserve">
+    <value>负责人</value>
+  </data>
+  <data name="Manage_DepartmentModel_Phone" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="Manage_DepartmentModel_Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="Manage_DepartmentModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_DepartmentModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_DepartmentModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_DepartmentModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_DepartmentModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_DepartmentModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_OrganizationID" xml:space="preserve">
+    <value>机构ID</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_DepartmentID" xml:space="preserve">
+    <value>部门ID</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_UserID" xml:space="preserve">
+    <value>用户ID</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_CreatorID" xml:space="preserve">
+    <value>创建用户</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_CreatorName" xml:space="preserve">
+    <value>创建用户名</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_CreationDate" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_ModifierID" xml:space="preserve">
+    <value>修改用户</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_ModifierName" xml:space="preserve">
+    <value>修改用户名</value>
+  </data>
+  <data name="Manage_DepartmentUserModel_ModificationDate" xml:space="preserve">
+    <value>修改时间</value>
+  </data>
+  <data name="Manage_DepartmentSettingModel_ID" xml:space="preserve">
+    <value>编号</value>
+  </data>
+  <data name="Manage_DepartmentSettingModel_OrganizationID" xml:space="preserve">
+    <value>机构/公司</value>
+  </data>
+  <data name="Manage_DepartmentSettingModel_Type" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="Manage_DepartmentSettingModel_Value" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="Manage_DepartmentSettingModel_Code" xml:space="preserve">
+    <value>代码</value>
+  </data>
+  <data name="Manage_OrganizationModel_CtiServices" xml:space="preserve">
+    <value>CTI服务器</value>
+  </data>
+  <data name="Manage_UserModel_PinYin" xml:space="preserve">
+    <value>拼音</value>
+  </data>
+  <data name="Manage_UserModel_PY" xml:space="preserve">
+    <value>拼音简写</value>
+  </data>
+</root>

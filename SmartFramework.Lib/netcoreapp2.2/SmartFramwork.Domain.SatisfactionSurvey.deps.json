@@ -15,6 +15,11 @@
         },
         "runtime": {
           "SmartFramwork.Domain.SatisfactionSurvey.dll": {}
+        },
+        "resources": {
+          "zh-CN/SmartFramwork.Domain.SatisfactionSurvey.resources.dll": {
+            "locale": "zh-CN"
+          }
         }
       },
       "Google.Protobuf/3.5.1": {

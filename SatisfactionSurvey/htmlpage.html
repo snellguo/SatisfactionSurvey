@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!-- Target -->
+    <input id="foo" value="https://github.com/zenorocha/clipboard.js.git">
+
+    <!-- Trigger -->
+    <button class="btn" data-clipboard-target="#foo">
+        <img src="assets/clippy.svg" alt="Copy to clipboard">
+    </button>
+    <script src="wwwroot/lib/jquery/dist/jquery-3.3.1.min.js"></script>
+    <script src="wwwroot/lib/clipboard.min.js"></script>
+    <script type="text/javascript">
+        new ClipboardJS('.btn');
+    </script>
+</body>
+</html>

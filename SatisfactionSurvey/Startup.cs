@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
@@ -8,11 +9,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
+using SmartFramwork.Core.Service;
+using SmartFramwork.Domain.SatisfactionSurvey;
 using SmartFramwork.Domain.SatisfactionSurvey.Resources;
 using SmartFramwork.Web.Filter;
 
@@ -69,6 +74,21 @@ namespace SatisfactionSurvey
                 };
             });
             #endregion
+
+            Class1 n = new Class1();
+
+            //批量注册
+            services.AddDomainService<IDomainService>();
+
+            //扩展HttpContext
+            //services.AddHttpContext();
+            services.AddLogging(configure =>
+            {
+                configure.AddLog4Net();
+                //configure.AddFilter("Microsoft", LogLevel.Warning);
+                //configure.AddFilter("System", LogLevel.Error);
+            });
+            services.AddGlobalVariable();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,7 +113,24 @@ namespace SatisfactionSurvey
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=SatisfactionSurvey}/{action=Index}/{id?}");
+        //template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            var supportedCultures = new[]
+            {
+                new CultureInfo("zh-CN"),
+                //new CultureInfo("en-US"),
+
+            };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+
+                DefaultRequestCulture = new RequestCulture("zh-CN"),
+                // Formatting numbers, dates, etc.
+                SupportedCultures = supportedCultures,
+                // UI strings that we have localized.
+                SupportedUICultures = supportedCultures
             });
         }
     }

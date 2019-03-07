@@ -7,6 +7,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
@@ -14,15 +15,24 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\SmartFramwork.Domain.SatisfactionSurvey\SmartFramwork.Domain.SatisfactionSurvey.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
     <Reference Include="SmartFramwork.Core">
       <HintPath>..\SmartFramework.Lib\SmartFramwork.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartFramwork.Domain.SatisfactionSurvey">
-      <HintPath>..\SmartFramework.Lib\netcoreapp2.2\SmartFramwork.Domain.SatisfactionSurvey.dll</HintPath>
     </Reference>
     <Reference Include="SmartFramwork.Web">
       <HintPath>..\SmartFramework.Lib\SmartFramwork.Web.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
