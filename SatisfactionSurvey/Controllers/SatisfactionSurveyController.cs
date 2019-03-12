@@ -60,7 +60,7 @@ namespace SatisfactionSurvey.Controllers
 		#region 新建及保存
         public IActionResult Create()
         {
-            return View();
+            return View(new SatisfactionSurveyModel());
         }
 
         [HttpPost]

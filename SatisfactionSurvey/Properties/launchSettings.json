@@ -1,7 +1,7 @@
-锘縶
+{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:4404",
       "sslPort": 44325
@@ -10,6 +10,7 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
+      "commandLineArgs": "test", //传递命令的参数
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -17,11 +18,13 @@
     },
     "SatisfactionSurvey": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "applicationUrl": "http://localhost:5002",
+      "commandLineArgs": "test", //传递命令的参数
+      "workingDirectory": "", //设置命令的工作目录
+      "launchBrowser": true, //是否在浏览器中启动
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "http://localhost:5002"
     }
   }
 }

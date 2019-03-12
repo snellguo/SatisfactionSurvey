@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace SmartFramwork.Domain.SatisfactionSurvey.Models
@@ -42,19 +43,19 @@ namespace SmartFramwork.Domain.SatisfactionSurvey.Models
 		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_BuildUnit")]
 		public string BuildUnit { get; set; }
 
-		/// <summary>
-		/// 姓名
-		/// 姓名
-		/// </summary>
-		[StringLength(50, MinimumLength = 0, ErrorMessage = "StringLength_ErrorMessage")]
-		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Name")]
-		public string Name { get; set; }
+        /// <summary>
+        /// 姓名
+        /// 姓名
+        /// </summary>
+        [StringLength(50, MinimumLength = 0, ErrorMessage = "StringLength_ErrorMessage")]
+        [Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Name")]
+        public string Name { get; set; }
 
-		/// <summary>
-		/// 部门
-		/// 部门
-		/// </summary>
-		[StringLength(50, MinimumLength = 0, ErrorMessage = "StringLength_ErrorMessage")]
+        /// <summary>
+        /// 部门
+        /// 部门
+        /// </summary>
+        [StringLength(50, MinimumLength = 0, ErrorMessage = "StringLength_ErrorMessage")]
 		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Department")]
 		public string Department { get; set; }
 
@@ -94,6 +95,7 @@ namespace SmartFramwork.Domain.SatisfactionSurvey.Models
 		/// 技术能力分
 		/// 技术能力分
 		/// </summary>
+        
 		[StringLength(50, MinimumLength = 0, ErrorMessage = "StringLength_ErrorMessage")]
 		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Technology")]
 		public string Technology { get; set; }
@@ -114,18 +116,18 @@ namespace SmartFramwork.Domain.SatisfactionSurvey.Models
 		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Communicate")]
 		public string Communicate { get; set; }
 
-		/// <summary>
-		/// 进场日期
-		/// 进场日期
-		/// </summary>
-		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Approach")]
-		public DateTime? Approach { get; set; }
+        /// <summary>
+        /// 进场日期
+        /// 进场日期
+        /// </summary>
+        [Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Approach")]
+        public DateTime? Approach { get; set; }
 
-		/// <summary>
-		/// 竣工日期
-		/// 竣工日期
-		/// </summary>
-		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Completed")]
+        /// <summary>
+        /// 竣工日期
+        /// 竣工日期
+        /// </summary>
+        [Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Completed")]
 		public DateTime? Completed { get; set; }
 
 		/// <summary>
@@ -136,11 +138,11 @@ namespace SmartFramwork.Domain.SatisfactionSurvey.Models
 		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Opinion")]
 		public string Opinion { get; set; }
 
-		/// <summary>
-		/// 遗留问题
-		/// 遗留问题
-		/// </summary>
-		[StringLength(500, MinimumLength = 0, ErrorMessage = "StringLength_ErrorMessage")]
+        /// <summary>
+        /// 遗留问题
+        /// 遗留问题
+        /// </summary>
+        [StringLength(500, MinimumLength = 0, ErrorMessage = "StringLength_ErrorMessage")]
 		[Display(Name = "SatisfactionSurvey_SatisfactionSurveyModel_Problem")]
 		public string Problem { get; set; }
 

@@ -75,8 +75,6 @@ namespace SatisfactionSurvey
             });
             #endregion
 
-            Class1 n = new Class1();
-
             //批量注册
             services.AddDomainService<IDomainService>();
 

@@ -23,13 +23,13 @@ namespace SmartFramwork.Domain.SatisfactionSurvey.Entities
 		/// 项目名称
 		/// 项目名称
 		/// </summary>
-		public string project_name { get; set; }
+		public string project_name { get; set; } = "测试";
 
-		/// <summary>
-		/// 合同号
-		/// 合同号
-		/// </summary>
-		public string contract_num { get; set; }
+        /// <summary>
+        /// 合同号
+        /// 合同号
+        /// </summary>
+        public string contract_num { get; set; }
 
 		/// <summary>
 		/// 建设单位
